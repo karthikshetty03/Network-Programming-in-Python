@@ -11,3 +11,4 @@ message = "Please explain MIME again in the next class"
 part.set_payload(message)
 msg.attach(part)
 msg.as_string()
+print(msg)
