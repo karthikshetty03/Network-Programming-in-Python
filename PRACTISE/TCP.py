@@ -3,10 +3,10 @@ import argparse, socket
 
 def recvall(sock, length):
     data = b""
-    while len(data) < length:
+    while len(data) < length-1:
         more = sock.recv(length - len(data))
+        print(more)
         if not more:
-            break
             raise EOFError(
                 "was expecting %d bytes but only received"
                 " %d bytes before the socket closed" % (length, len(data))
